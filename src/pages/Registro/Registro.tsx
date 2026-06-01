@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./Registro.css";
+import flor from "../../assets/flor.png";
 
 function Register() {
 
@@ -45,7 +46,7 @@ function Register() {
         <div className="card">
 
           <div className="logo">
-            <img src="/iconos/flor.png" alt="flor" />
+            <img src={flor} alt="flor" />
           </div>
 
           <h2>Drogueria Pili</h2>
@@ -133,7 +134,7 @@ function Register() {
             </button>
 
             <p style={{ textAlign: "center" }}>
-              ¿Ya tienes cuenta? <Link to="/">Iniciar sesión</Link>
+              
             </p>
 
           </form>

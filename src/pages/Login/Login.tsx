@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
+import flor from "../../assets/flor.png";
 
 function Login() {
 
@@ -12,43 +13,44 @@ function Login() {
 
   const navigate = useNavigate();
 
-const login = (e: React.FormEvent) => {
-  e.preventDefault();
+  const login = (e: React.FormEvent) => {
+    e.preventDefault();
 
-  if (!username || !password) {
-    setErrorCampos(true);
-    setErrorCredenciales(false);
-    return;
-  }
+    if (!username || !password) {
+      setErrorCampos(true);
+      setErrorCredenciales(false);
+      return;
+    }
 
-  setErrorCampos(false);
+    setErrorCampos(false);
 
-  // Administrador
-  if (username === "admin" && password === "1234") {
-    setErrorCredenciales(false);
-    navigate("/dashboard");
-    return;
-  }
-
-  // Usuario registrado
-  const usuarioGuardado = localStorage.getItem("usuario");
-
-  if (usuarioGuardado) {
-    const datos = JSON.parse(usuarioGuardado);
-
-    if (
-      username === datos.username &&
-      password === datos.password
-    ) {
+    // Administrador
+    if (username === "admin" && password === "1234") {
       setErrorCredenciales(false);
       navigate("/dashboard");
       return;
     }
-  }
 
-  // Si no coincide ninguna opción
-  setErrorCredenciales(true);
-};
+    // Usuario registrado
+    const usuarioGuardado = localStorage.getItem("usuario");
+
+    if (usuarioGuardado) {
+      const datos = JSON.parse(usuarioGuardado);
+
+      if (
+        username === datos.username &&
+        password === datos.password
+      ) {
+        setErrorCredenciales(false);
+        navigate("/dashboard");
+        return;
+      }
+    }
+
+    // Si no coincide ninguna opción
+    setErrorCredenciales(true);
+  };
+
   return (
     <div className="container">
 
@@ -57,7 +59,7 @@ const login = (e: React.FormEvent) => {
         <div className="card">
 
           <div className="logo">
-            <img src="/iconos/flor.png" alt="flor" />
+            <img src={flor} alt="flor" />
           </div>
 
           <h1>Droguería Pili</h1>
@@ -128,7 +130,7 @@ const login = (e: React.FormEvent) => {
 
             <p style={{ textAlign: "center", marginTop: "10px" }}>
               ¿No tienes cuenta?{" "}
-              <Link to="/register">
+              <Link to="/registro">
                 Regístrate
               </Link>
             </p>

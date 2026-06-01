@@ -1,6 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 
+import flor from "../../assets/flor.png";
+import cajita from "../../assets/cajita.png";
+import carrito from "../../assets/carrito.png";
+import venta from "../../assets/venta.png";
+import informe from "../../assets/informe.png";
+
 function Dashboard() {
 
   const usuarioActual = "Administrador";
@@ -19,7 +25,7 @@ function Dashboard() {
 
         {/* logo pequeño */}
         <div className="logo-pequeno">
-          <img src="/iconos/flor.png" alt="logo" />
+          <img src={flor} alt="logo" />
         </div>
 
         {/* textos */}
@@ -54,7 +60,7 @@ function Dashboard() {
           style={{ textDecoration: "none" }}
         >
           <div className="icono inventario">
-            <img src="/iconos/cajita.png" alt="inventario" />
+            <img src={cajita} alt="inventario" />
           </div>
 
           <h3>Inventario</h3>
@@ -68,7 +74,7 @@ function Dashboard() {
           style={{ textDecoration: "none" }}
         >
           <div className="icono compras">
-            <img src="/iconos/carrito.png" alt="compras" />
+            <img src={carrito} alt="compras" />
           </div>
 
           <h3>Compras</h3>
@@ -82,7 +88,7 @@ function Dashboard() {
           style={{ textDecoration: "none" }}
         >
           <div className="icono ventas">
-            <img src="/iconos/venta.png" alt="ventas" />
+            <img src={venta} alt="ventas" />
           </div>
 
           <h3>Ventas</h3>
@@ -96,7 +102,7 @@ function Dashboard() {
           style={{ textDecoration: "none" }}
         >
           <div className="icono informes">
-            <img src="/iconos/informe.png" alt="informes" />
+            <img src={informe} alt="informes" />
           </div>
 
           <h3>Informes</h3>
